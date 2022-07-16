@@ -14,8 +14,8 @@ import argparse
 import os
 from urllib.parse import urlparse
 #################################
-def bar_custom(current, total, width=80):
- print("Downloading: %d%% [%d / %d] bytes" % (current / total * 100, current, total))
+#def bar_custom(current, total, width=80):
+# print("Downloading: %d%% [%d / %d] bytes" % (current / total * 100, current, total))
 #################################
 #step1
 my_parser = argparse.ArgumentParser(description='Make sure your files exsit in the data folder!')
@@ -35,21 +35,23 @@ f_name = args.input
 
 ##################################################
 #step5 the analysis 
-manifest_df = pd.read_csv(f_name, sep='\t')
+manifest_df = pd.read_csv("example.tsv", sep='\t')
 
 list_of_single_column = manifest_df['urls'].tolist()
 cc=0
 for x in list_of_single_column:
-    a = urlparse(x)
-    cc +=1    
-    print("File number %d" %int(cc))    
-    print(os.path.basename(a.path))
-    wget.download(x,bar=bar_custom)
-    print()
+    try:
+     a = urlparse(x)
+     cc +=1    
+     print("File number %d" %int(cc))    
+     print(os.path.basename(a.path))
+     wget.download(x)
+     print()
+    except:
+       print("Erorr in file %s"%(os.path.basename(a.path)))
 else:
   print("Finally finished!") 
 
     #os.system(f"""wget -c --read-timeout=5 --tries=0 "{x}"""")
 ##################################################
    
-
