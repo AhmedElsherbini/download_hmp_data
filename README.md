@@ -11,9 +11,7 @@ First, after you get your manifest file from (https://portal.hmpdacc.org/search/
 
 ```
 As dependencies, you need to have 
-pandas
-agrpase
-wget
+pandas , agrpase and wget
 ## Contributing
 Everything is clear, right? But anyhow, contact me here or directly via email: drahmedsherbini@yahoo.com
 ## License
