@@ -12,6 +12,6 @@ First, after you get your manifest file from the (https://portal.hmpdacc.org/sea
 ```
 
 ## Contributing
-Everything is clear right? But anyhow, contact here or directly via email : drahmedsherbini@yahoo.com
+Everything is clear right ? But anyhow, contact here or directly via email : drahmedsherbini@yahoo.com
 ## License
 This tool aims to help others. Kindly, cite my github page !
