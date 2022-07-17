@@ -46,7 +46,6 @@ for x in list_of_single_column:
      print("File number %d" %int(cc))    
      print(os.path.basename(a.path))
      wget.download(x)
-     print()
     except:
        print("Erorr in file %s"%(os.path.basename(a.path)))
 else:
