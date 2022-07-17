@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jun  3 20:36:39 2022
+Created on Sun Jul  17 20:36:39 2022
 
 @author: ahmed elsherbini
 """
@@ -35,7 +35,7 @@ f_name = args.input
 
 ##################################################
 #step5 the analysis 
-manifest_df = pd.read_csv("example.tsv", sep='\t')
+manifest_df = pd.read_csv(f_name, sep='\t')
 
 list_of_single_column = manifest_df['urls'].tolist()
 cc=0
@@ -46,6 +46,7 @@ for x in list_of_single_column:
      print("File number %d" %int(cc))    
      print(os.path.basename(a.path))
      wget.download(x)
+     print()
     except:
        print("Erorr in file %s"%(os.path.basename(a.path)))
 else:
