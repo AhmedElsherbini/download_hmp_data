@@ -1,6 +1,6 @@
 # download_hmp_data
 
-This simple script aims to download data from hmp portal (https://portal.hmpdacc.org/search/s?facetTab=cases). Although the presence of tools to download data from this website like hmp client or portal client (https://github.com/michbur/hmp_client) or (https://github.com/IGS/portal_client), they do not work with me for some files. So, I made this simple script to work around it. And you can use in case it the main tools do not work with you also.
+This simple script aims to download data from hmp portal (https://portal.hmpdacc.org/search/s?facetTab=cases). Although the presence of tools to download data from this website like hmp client or portal client (https://github.com/michbur/hmp_client) or (https://github.com/IGS/portal_client), they do not work with me for some files. So, I made this simple script to work around it. And you can use "only" in case it the main tools do not work with you also.
 
 ## Usage
 
