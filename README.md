@@ -7,7 +7,7 @@ This simple script aims to download data from hmp portal (https://portal.hmpdacc
 First, after you get your manifest file from (https://portal.hmpdacc.org/search/s?facetTab=cases), put it in the same directory of the script and run this python3 script.
 
 ```python
-python download_urls.py -i example_manifest.tsv
+python3 download_urls.py -i example_manifest.tsv
 
 ```
 As dependencies, you need to have 
