@@ -51,7 +51,5 @@ for x in list_of_single_column:
        print("Erorr in file %s"%(os.path.basename(a.path)))
 else:
   print("Finally finished!") 
-
-    #os.system(f"""wget -c --read-timeout=5 --tries=0 "{x}"""")
 ##################################################
    
