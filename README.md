@@ -10,7 +10,7 @@ First, after you get your manifest file from (https://portal.hmpdacc.org/search/
 python3 download_urls.py -i example_manifest.tsv
 
 ```
-As dependencies, you need to have 
+As dependencies, you need to have (via pip3 or conda)
 pandas , agrpase and wget
 ## Contributing
 Everything is clear, right? But anyhow, contact me here or directly via email: drahmedsherbini@yahoo.com
