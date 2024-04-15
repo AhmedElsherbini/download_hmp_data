@@ -32,8 +32,8 @@ my_parser.add_argument('-i','--input',
 args = my_parser.parse_args()
 ##################################################
 #step4
-f_name = args.input
-#f_name = ("hmp_manifest_1264205a4.tsv")
+#f_name = args.input
+f_name = ("example_manifest.tsv")
 ##################################################
 #step5 the analysis 
 manifest_df = pd.read_csv(f_name, sep='\t')
@@ -42,8 +42,9 @@ list_of_single_column = manifest_df['urls'].tolist()
 cc=0
 
 print("Updated:15_04_2024")
-print("Tip:In your manifest file.tsv, if the url (https:://......) works in you Internet browser, this scipt will help you.")
+print("Tip: In your manifest file.tsv, if the URL (https:://......) works in your Internet browser, this script will help you.")
 
+success = [] 
 for x in list_of_single_column:
     try:
         if ",ftp://" in x:
@@ -53,19 +54,28 @@ for x in list_of_single_column:
             print("File number %d" %int(cc))    
             print(os.path.basename(a.path))
             wget.download(x)
+            pp = str(os.path.basename(a.path))
+            success.append(pp)
         else:
            a = urlparse(x)
            cc +=1    
            print("File number %d" %int(cc))    
            print(os.path.basename(a.path))
            wget.download(x)
+           pp = str(os.path.basename(a.path))
+           success.append(pp)
        
     except:
-     print("Erorr in file %s"%(os.path.basename(a.path)))
+     print("Error in file %s, joining the failed_manifest.tsv"%(os.path.basename(a.path)))
      print("Kindly check on the website of your file is (indeed) avaliable!")
+
+successful = manifest_df[manifest_df['urls'].str.contains('|'.join(success))]
+
+failed = manifest_df[~manifest_df['urls'].str.contains('|'.join(success))]
+successful.to_csv("successful_manifest.tsv", sep='\t', index=False, header=True)
+failed.to_csv("failed_manifest.tsv", sep='\t', index=False, header=True)
 
 
 print("##Finally finished!##") 
 
-##################################################
 
