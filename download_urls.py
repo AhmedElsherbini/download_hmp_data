@@ -41,6 +41,7 @@ manifest_df = pd.read_csv(f_name, sep='\t')
 list_of_single_column = manifest_df['urls'].tolist()
 cc=0
 
+print("Updated:15_04_2024")
 print("Tip:In your manifest file.tsv, if the url (https:://......) works in you Internet browser, this scipt will help you.")
 
 for x in list_of_single_column:
@@ -58,10 +59,13 @@ for x in list_of_single_column:
            print("File number %d" %int(cc))    
            print(os.path.basename(a.path))
            wget.download(x)
+       
     except:
      print("Erorr in file %s"%(os.path.basename(a.path)))
      print("Kindly check on the website of your file is (indeed) avaliable!")
-else:
-  print("Finally finished!") 
+
+
+print("##Finally finished!##") 
+
 ##################################################
 
