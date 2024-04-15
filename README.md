@@ -13,7 +13,7 @@ python3 download_urls.py -i example_manifest.tsv
 As dependencies, you need to have (via pip3 or conda)
 pandas , agrpase and get
 
-To examine some current manifest, you have two options.
+**To examine some current manifest, you have two options.**
 
 Randomly pick few of them.
 
