@@ -32,8 +32,8 @@ my_parser.add_argument('-i','--input',
 args = my_parser.parse_args()
 ##################################################
 #step4
-#f_name = args.input
-f_name = ("example_manifest.tsv")
+f_name = args.input
+#f_name = ("example_manifest.tsv")
 ##################################################
 #step5 the analysis 
 manifest_df = pd.read_csv(f_name, sep='\t')
