@@ -33,7 +33,7 @@ args = my_parser.parse_args()
 ##################################################
 #step4
 f_name = args.input
-#f_name = ("example_manifest.tsv")
+#f_name = ("sample_manifest.tsv")
 ##################################################
 #step5 the analysis 
 manifest_df = pd.read_csv(f_name, sep='\t')
@@ -44,7 +44,8 @@ cc=0
 print("Updated:15_04_2024")
 print("Tip: In your manifest file.tsv, if the URL (https:://......) works in your Internet browser, this script will help you.")
 
-success = [] 
+success = []
+failed = []
 for x in list_of_single_column:
     try:
         if ",ftp://" in x:
@@ -68,10 +69,11 @@ for x in list_of_single_column:
     except:
      print("Error in file %s, joining the failed_manifest.tsv"%(os.path.basename(a.path)))
      print("Kindly check on the website of your file is (indeed) avaliable!")
+     pp = str(os.path.basename(a.path))
+     failed.append(pp)
 
 successful = manifest_df[manifest_df['urls'].str.contains('|'.join(success))]
-
-failed = manifest_df[~manifest_df['urls'].str.contains('|'.join(success))]
+failed = manifest_df[manifest_df['urls'].str.contains('|'.join(failed))]
 successful.to_csv("successful_manifest.tsv", sep='\t', index=False, header=True)
 failed.to_csv("failed_manifest.tsv", sep='\t', index=False, header=True)
 
