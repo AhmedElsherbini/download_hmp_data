@@ -11,7 +11,16 @@ python3 download_urls.py -i example_manifest.tsv
 
 ```
 As dependencies, you need to have (via pip3 or conda)
-pandas , agrpase and wget
+pandas , agrpase and get
+
+To examine some current manifest, you have two options.
+
+Randomly pick few of them.
+
+1-Manually, on the website itself like in [example](https://portal.hmpdacc.org/files/91319e642fdd8a6e3b059cfb05915bde), try the manual download button per individual file, if it works, a good sign.
+
+2- From your tsv file copy and paste the link (https://.............bz2) in your browser, if you can see be downloaded, then this is a good sign.
+
 ## Contributing
 Everything is clear, right? But anyhow, contact me here or directly via email: drahmedsherbini@yahoo.com
 ## License
