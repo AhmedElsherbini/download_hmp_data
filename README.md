@@ -15,7 +15,7 @@ python3 download_urls.py -i example_manifest.tsv
 As dependencies, you need to have (via pip3 or conda)
 pandas , agrpase and get
 
-**To examine some current manifest https validity, you have two options.**
+**To examine some current manifest HTTPS validity, you have two options.**
 
 Randomly pick a few of them.
 
@@ -23,6 +23,7 @@ Randomly pick a few of them.
 
 2- From your TSV file copy and paste the link (https://.............bz2) in your browser, if you can see be downloaded, then this is a good sign.
 
+As an output, your manifest will be divided into one successful manifest and one failed manifest file (to list the samples that were not downloaded).
 
 ## Contributing
 Everything is clear, right? But anyhow, contact me here or directly via email: drahmedsherbini@yahoo.com
